@@ -5,3 +5,7 @@ export const Transaction = ({type, amount, currency}) => {return(<tr>
     <td>{amount}</td>
     <td>{currency}</td>
   </tr>)}
+  
+  Transaction.propType={ type: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired,
+    amount: PropTypes.number.isRequired,}

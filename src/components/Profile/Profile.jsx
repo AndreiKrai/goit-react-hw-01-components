@@ -1,15 +1,7 @@
-import css from './Profile.module.css'
+import css from './Profile.module.css';
 import PropTypes from 'prop-types';
 
-export const Profile = ({
-  username,
-  tag,
-  location,
-  avatar,
-  followers,
-  views,
-  likes,
-}) => {
+export const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
     <div className={css.profileCard}>
       <div className={css.description}>
@@ -22,26 +14,28 @@ export const Profile = ({
       <ul className={css.ulStats}>
         <li>
           <span className={css.smallTxt}>Followers</span>
-          <span className={css.boldText}>{followers}</span>
+          <span className={css.boldText}>{stats.followers}</span>
         </li>
         <li>
           <span className={css.smallTxt}>Views</span>
-          <span className={css.boldText}>{views}</span>
+          <span className={css.boldText}>{stats.views}</span>
         </li>
         <li>
           <span className={css.smallTxt}>Likes</span>
-          <span className={css.boldText}>{likes}</span>
+          <span className={css.boldText}>{stats.likes}</span>
         </li>
       </ul>
     </div>
   );
 };
 Profile.propTypes = {
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  avatar: PropTypes.string,
-  followers: PropTypes.number,
-  views: PropTypes.number,
-  likes: PropTypes.number,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }).isRequired,
 };
