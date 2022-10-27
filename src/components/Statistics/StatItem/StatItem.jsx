@@ -10,7 +10,7 @@ export const StatItem = ({label, percentage,style}) => {
 };
 
 StatItem.propTypes={
-  label:PropTypes.string,
-  percentage:PropTypes.number,
-  style:PropTypes.shape({backgroundColor:PropTypes.string})
+  label:PropTypes.string.isRequired,
+  percentage:PropTypes.number.isRequired,
+  style:PropTypes.shape({backgroundColor:PropTypes.string.isRequired}).isRequired
 }
